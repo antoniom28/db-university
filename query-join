@@ -50,7 +50,6 @@ WHERE `departments`.`name` = "Dipartimento di Matematica"
 
 /*7. BONUS: Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per
 superare ciascuno dei suoi esami*/
-
 SELECT COUNT(`exams`.`course_id`) AS 'tentativi',
 `exam_student`.`student_id` , 
 `students`.`name` AS 'nome',
@@ -62,4 +61,4 @@ FROM `exam_student`
 INNER JOIN `exams` ON `exams`.`id` = `exam_student`.`exam_id`
 INNER JOIN `courses` ON `courses`.`id` = `exams`.`course_id`
 INNER JOIN `students` ON `students`.`id` = `exam_student`.`student_id`
-GROUP BY `exam_student`.`student_id` , `exams`.`course_id`;
+GROUP BY `exam_student`.`student_id` , `exams`.`course_id`
